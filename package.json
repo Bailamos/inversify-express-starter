@@ -7,12 +7,14 @@
   "main": "index.ts",
   "scripts": {
     "build": "tsc",
-    "dev": "npm run build && node --experimental-specifier-resolution=node ./dist/index.js",
+    "dev": "npm run build && npm run scss && npm run copy-views && npm run copy-public && node --experimental-specifier-resolution=node ./dist/index.js",
     "start": "nodemon -e ts,css,js,njk,json,scss --watch src --delay 1 --exec \"npm run dev\"",
-    "test": "test",
+    "test": "jest",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "scss": "sass src/scss/main.scss public/styles/main.css -q"
+    "scss": "sass src/scss/main.scss public/styles/main.css -q",
+    "copy-views": "cp -ru src/views dist",
+    "copy-public": "rm -r dist/public; mv public dist"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

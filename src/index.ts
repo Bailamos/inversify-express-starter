@@ -1,10 +1,26 @@
-import { SOME_CONST } from './services/test.js';
+import container from './ioc.config.js';
+import nunjucks from 'nunjucks';
+import express from 'express';
+import { InversifyExpressServer } from 'inversify-express-utils';
+import path from 'path';
+const __dirname = import.meta.dirname;
 
-console.log(SOME_CONST);
-console.log(1 + 1);
-abc(1);
+const server = new InversifyExpressServer(container);
 
-function abc(abc: number) {
-  const _a = 1;
-  console.log('test' + abc);
-}
+server.setConfig((app) => {
+  nunjucks.configure(path.join(__dirname, 'views'), {
+    autoescape: true,
+    express: app,
+    noCache: true,
+    watch: true
+  });
+
+  app.set('view engine', 'njk');
+  app.use('/css', express.static(path.join(__dirname, 'public')));
+});
+
+const app = server.build();
+
+app.listen(3000, () => {
+  console.log('Server started on http://localhost:3000');
+});
