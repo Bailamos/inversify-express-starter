@@ -1,0 +1,46 @@
+{
+  "name": "lessons-booking",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Szymon Kaczorowski",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "npm run build && node --experimental-specifier-resolution=node ./dist/index.js",
+    "start": "nodemon -e ts,css,js,njk,json,scss --watch src --delay 1 --exec \"npm run dev\"",
+    "test": "test",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "scss": "sass src/scss/main.scss public/styles/main.css -q"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@stylistic/eslint-plugin-js": "^4.4.1",
+    "@types/express": "^5.0.5",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.10.1",
+    "@types/nunjucks": "^3.2.6",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.5.0",
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.11",
+    "prettier": "^3.7.3",
+    "sass": "^1.94.2",
+    "ts-jest": "^29.4.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.48.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "helmet": "^8.1.0",
+    "inversify": "^6.2.2",
+    "inversify-express-utils": "^6.5.0",
+    "nunjucks": "^3.2.4",
+    "reflect-metadata": "^0.2.2"
+  }
+}
