@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import container from './ioc.config.js';
 import nunjucks from 'nunjucks';
 import express from 'express';

@@ -14,7 +14,11 @@
     "lint:fix": "eslint --fix",
     "scss": "sass src/scss/main.scss public/styles/main.css -q",
     "copy-views": "cp -ru src/views dist",
-    "copy-public": "rm -r dist/public; mv public dist"
+    "copy-public": "rm -r dist/public; mv public dist",
+    "kysely:migrate-make": "kysely migrate:make",
+    "kysely:migrate": "kysely migrate up",
+    "kysely:rollback": "kysely migrate:rollback --all",
+    "kysley:generate-types": "kysely-codegen --out-file ./src/db/db.d.ts"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
@@ -23,11 +27,14 @@
     "@types/jest": "^30.0.0",
     "@types/node": "^24.10.1",
     "@types/nunjucks": "^3.2.6",
+    "@types/pg": "^8.15.6",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "globals": "^16.5.0",
     "jest": "^30.2.0",
+    "kysely-codegen": "^0.19.0",
+    "kysely-ctl": "^0.19.0",
     "nodemon": "^3.1.11",
     "prettier": "^3.7.3",
     "sass": "^1.94.2",
@@ -42,7 +49,9 @@
     "helmet": "^8.1.0",
     "inversify": "^6.2.2",
     "inversify-express-utils": "^6.5.0",
+    "kysely": "^0.28.8",
     "nunjucks": "^3.2.4",
+    "pg": "^8.16.3",
     "reflect-metadata": "^0.2.2"
   }
 }
