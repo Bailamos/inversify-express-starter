@@ -8,6 +8,7 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import cookieSession from 'cookie-session';
 import { doubleCsrf } from 'csrf-csrf';
+import helmet from 'helmet';
 
 const __dirname = import.meta.dirname;
 
@@ -52,6 +53,7 @@ server.setConfig((app) => {
     res.locals.req = req;
     next();
   });
+  app.use(helmet());
 
   app.set('view engine', 'njk');
   app.use('/css', express.static(path.join(__dirname, 'public')));
