@@ -3,4 +3,12 @@
 {% block content %}
   <h1 class="mt-5">Welcome, Szymon Kaczorowski</h1>
   <p class="lead">Your calendar</p>
+  <form action="/" method="POST">
+    <div class="mb-3">
+      <input type="text" class="form-control" id="_csrf" name="_csrf" aria-describedby="eventNam" value='{{ req.csrfToken() }}'>
+      <label for="eventName" class="form-label">Event name</label>
+      <input type="text" class="form-control" id="eventName" name="eventName" aria-describedby="eventNam" value='test'>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 {% endblock %}
