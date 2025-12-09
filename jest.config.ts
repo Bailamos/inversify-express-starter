@@ -10,7 +10,12 @@ const config: Config = {
     '^(\\.{1,2}/.*)\\.js$': '$1'
   },
   transform: {
-    '.(ts|tsx)': 'ts-jest'
+    '.(ts|tsx)': [
+      'ts-jest',
+      {
+        diagnostics: false
+      }
+    ]
   },
   testPathIgnorePatterns: ['/dist/']
 };

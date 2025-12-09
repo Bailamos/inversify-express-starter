@@ -11,6 +11,7 @@
     "types": ["reflect-metadata", "node", "jest"],
     "lib": ["es6"],
     "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "ts-node": {
     "esm": true,
