@@ -17,8 +17,9 @@ Additionally in the root there is a docker compose with Postgres and PGAdmin con
 ## **How to run**
 1. Run `docker-compose up` to run Postgres and PGAdmin in container
 2. Copy `.env.example` to `.env`
-3. To run app execute `npm run start`
-4. Server will be available on `localhost:3000`
+3. To install dependencies execute `npm install`
+4. To run app execute `npm run start`
+5. Server will be available on `localhost:3000`
 
 ## **Migrations & DB types**
 
