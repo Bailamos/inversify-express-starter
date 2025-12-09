@@ -7,6 +7,8 @@ A Node.js starter template that provides a fully-typed Express setup with depend
 - Inversify - Powerful dependency injection container for clean architecture
 - Cookie-session - Lightweight session management via cookies
 - Csrf-csrf - CSRF protection middleware
+- SCSS — Enhanced styling with variables, mixins, and modular architecture  
+- Bootstrap — Prebuilt layout system and components for rapid UI development  
 - Helmet — Security middleware that sets HTTP headers to help app  
 - Kysely - Type-safe SQL query builder
 - Jest - Testing framework
